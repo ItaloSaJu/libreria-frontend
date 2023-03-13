@@ -1,4 +1,23 @@
 
-<div class="container" *ngFor="let c of dataLibri">
-    {{c.nome}}
+<div class="container"   >
+  <div class="container-card" >
+    <div class="card" *ngFor="let c of dataLibri">
+      <div class="image">
+        <img src="https://blog.codmind.com/content/images/2021/01/banner-5.jpg" alt="">
+      </div>
+      <div class="container-text">
+        <div class="title">
+          <h1>Titulo : {{c.nome}}</h1>
+        </div>
+        <div class="categoria">
+          <h2>Categoria : {{c.categoria.nome}}</h2>
+        </div>
+        <div class="prezzo">
+          <h2>Prezzo : {{c.prezzo}} :00 </h2>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>

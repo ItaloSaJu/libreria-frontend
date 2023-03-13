@@ -19,14 +19,20 @@ export class ListBookComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.categoriaId = params['categoriaId']
 
-      this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe( (x:any) => {
-        this.dataLibri = x
-        console.log(this.dataLibri);
-        
+        if(this.categoriaId == 0){
+          this.libriService.AllBook().subscribe(x => {
+            this.dataLibri = x
+            console.log(this.dataLibri);
+          })}
+          else{
+            this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
+              this.dataLibri = x
+              console.log(this.dataLibri);
+          })
+
+        }
 
       })
-    })
 
   }
-
 }

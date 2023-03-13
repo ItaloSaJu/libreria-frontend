@@ -1,14 +1,13 @@
-
-
 <div class="container">
-    <div class="list-categoria" [routerLink]="'/catalogo/'+0" >
-      <ul>
-        <li>Tutto</li>
-      </ul>
-    </div>
-    <div class="list-categoria" [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
-      <ul>
-        <li>{{c.nome}}</li>
-      </ul>
+    <div class="container-category">
+      <h2>categoria</h2>
+      <br>
+      <div class="list-categoria" [routerLink]="'/catalogo/'+0" >
+          <h3>Tutti</h3>
+        </div>
+        <div class="list-categoria" [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
+            <h3>{{c.nome}}</h3>
+        </div>
     </div>
 </div>
+
