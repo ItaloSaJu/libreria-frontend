@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catagolo.component.css']
 })
 export class CatagoloComponent implements OnInit {
-
-  constructor() { }
-
   ngOnInit(): void {
   }
+
+  
 
 }
