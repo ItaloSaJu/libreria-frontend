@@ -1,17 +1,16 @@
 
 <div class="container">
   <mat-accordion >
-    <mat-expansion-panel (opened)="panelOpenState = false"
-                         (closed)="panelOpenState = true">
+    <mat-expansion-panel >
       <mat-expansion-panel-header>
         <mat-panel-title >
           Categoria
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <mat-panel-description class="list-categoria" [routerLink]="'/catalogo/'+0">
+      <mat-panel-description  [routerLink]="'/catalogo/'+0">
         Tutti
       </mat-panel-description>
-      <mat-panel-description class="list-categoria" [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
+      <mat-panel-description  [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
         <p >{{c.nomeCategoria}}</p>
       </mat-panel-description>
     </mat-expansion-panel>
