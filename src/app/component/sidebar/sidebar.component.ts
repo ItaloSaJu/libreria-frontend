@@ -9,6 +9,7 @@ import { CategoriaService } from 'src/app/service/categoria/categoria.service';
 export class SidebarComponent implements OnInit {
 
   dataCategoria : any;
+  panelOpenState = true;
   constructor(private categoriaService : CategoriaService) { }
 
   ngOnInit(): void {

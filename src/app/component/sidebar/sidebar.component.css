@@ -4,29 +4,33 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #FFFFFF;
   }
-.container-category{
-  width: 60%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
+
+
 .list-categoria{
   width: 80%;
-  padding-left: 20px;
-}
-
-.list-categoria h3{
-  width: 150px;
   height: 40px;
   padding-left: 20px;
+  margin-top: 20px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  cursor: pointer;
   border-radius: 5px;
 }
 
-.list-categoria h3:hover{
-  background-color: rgba(7, 68, 59, 0.267);
+.list-categoria:hover{
+    background-color: rgba(7, 68, 59, 0.267);
 
 }
+
+
+
+.mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+
+
+
