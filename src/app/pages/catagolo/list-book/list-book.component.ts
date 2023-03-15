@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class ListBookComponent implements OnInit {
   categoriaId: any;
 
   constructor(private libriService : LibriService,
-              private route : ActivatedRoute) { }
+              private route : ActivatedRoute,
+              private router : Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -33,6 +34,9 @@ export class ListBookComponent implements OnInit {
         }
 
       })
-
   }
+
+  
+
+
 }

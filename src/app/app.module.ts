@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     SidebarComponent,
     CatagoloComponent,
     HomepageComponent,
-    ListBookComponent
+    ListBookComponent,
+    DetailBookComponent
   ],
   imports: [
     BrowserModule,

@@ -15,4 +15,9 @@ export class LibriService {
   LibriDellaStessaCategoria(categoriaId : any){
     return this.http.get(`http://localhost:8081/api/category/${categoriaId}`)
   }
+
+  BookId(libriId : any){
+    return this.http.get<[]>(`http://localhost:8081/api/libri/${libriId}`)
+
+  }
 }
