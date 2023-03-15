@@ -8,10 +8,10 @@ import { LibriService } from 'src/app/service/libri/libri.service';
   styleUrls: ['./detail-book.component.css']
 })
 export class DetailBookComponent implements OnInit {
-  
+
   libriId : any;
-  libriDati :  any[] = []
-  
+  libriDati :  any = []
+
 
   constructor(private libriService : LibriService,
     private route : ActivatedRoute, ) { }
@@ -20,11 +20,11 @@ export class DetailBookComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId']
 
-      
+
     })
-    this.libriService.BookId(this.libriId).subscribe( (x : any) => {
-      this.libriDati = x 
-      console.log(this.libriDati);
+    this.libriService.BookId(this.libriId).subscribe( x => {
+      this.libriDati = Array(x)
+      console.log(Array(this.libriDati));
   })
 }
 
