@@ -111,4 +111,9 @@
   background-color:rgb(36, 132, 36) ;
 }
 
+.danger{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 

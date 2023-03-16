@@ -9,8 +9,11 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 })
 export class ListBookComponent implements OnInit {
 
+  status: boolean = false;
+
   dataLibri: any;
   categoriaId: any;
+  
 
   constructor(private libriService : LibriService,
               private route : ActivatedRoute,
@@ -33,10 +36,15 @@ export class ListBookComponent implements OnInit {
 
         }
 
+
       })
+
+
   }
 
-
+  clickEvent(){
+    this.status = !this.status;       
+}
 
 
 }

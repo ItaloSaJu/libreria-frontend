@@ -15,6 +15,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DetailBookComponent } from './pages/detail-book/detail-book.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { DetailBookComponent } from './pages/detail-book/detail-book.component';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatTreeModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
