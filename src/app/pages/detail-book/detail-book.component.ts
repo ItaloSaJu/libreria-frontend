@@ -10,7 +10,8 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 export class DetailBookComponent implements OnInit {
 
   libriId : any;
-  libriDati :  any = []
+  libriDati :  any
+  datiLocalStorage : any = []
 
 
   constructor(private libriService : LibriService,
@@ -20,12 +21,28 @@ export class DetailBookComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId']
 
+      this.libriService.BookId(this.libriId).subscribe( (x:any) => {
+        this.libriDati = Array(x)
+
+        // this.datiLocalStorage.push(this.libriDati)
+        // let transaccion = JSON.stringify(this.datiLocalStorage)
+        // localStorage.setItem("transa", transaccion)
+
+      })
+    })
+
+    this.libriService.disparador.subscribe(data => {
+      this.datiLocalStorage.push(data)
+      console.log(this.datiLocalStorage);
 
     })
-    this.libriService.BookId(this.libriId).subscribe( x => {
-      this.libriDati = Array(x)
-      console.log(Array(this.libriDati));
-  })
+
+    const dato = localStorage.getItem('ahora');
+    if(dato  ){
+      this.datiLocalStorage = Array(JSON.parse(dato))
+      console.log(this.datiLocalStorage);
+
+    }
 }
 
 }

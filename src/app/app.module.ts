@@ -18,6 +18,7 @@ import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatTreeModule,
     MatGridListModule,
     MatPaginatorModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
