@@ -15,9 +15,31 @@
   border-radius: 5px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 15px;
   background-color: #ffff;
   margin-bottom: 20px;
+}
+
+.length{
+  width: 20%;
+  height: 100%;
+  text-align: start;
+}
+.length p{
+  margin: 0;
+}
+.length p span{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.icons{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .container-card{
