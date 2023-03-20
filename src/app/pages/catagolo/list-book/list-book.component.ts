@@ -14,6 +14,7 @@ export class ListBookComponent implements OnInit {
 
   dataLibri: any;
   categoriaId: any;
+  lenghtLIbri: any;
 
 
   constructor(private libriService : LibriService,
@@ -27,18 +28,20 @@ export class ListBookComponent implements OnInit {
         if(this.categoriaId == 0){
           this.libriService.AllBook().subscribe(x => {
             this.dataLibri = x
-            console.log(this.dataLibri);
+            this.lenghtLIbri = this.dataLibri.length;
+            
           })}
           else{
             this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
               this.dataLibri = x
+              this.lenghtLIbri = this.dataLibri.length;
               console.log(this.dataLibri);
-          })
-
-        }
-
-
-      })
+            })
+          }
+        })
+        
+        
+      
 
 
   }
@@ -47,6 +50,7 @@ export class ListBookComponent implements OnInit {
     this.status = !this.status;
     this.button = !this.button;
 }
+
 
 
 }
