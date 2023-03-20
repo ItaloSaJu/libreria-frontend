@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable , Output , } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +20,6 @@ export class LibriService {
     return this.http.get<[]>(`http://localhost:8081/api/libri/${libriId}`)
 
   }
+
+  @Output() disparador : EventEmitter<any> = new EventEmitter()
 }

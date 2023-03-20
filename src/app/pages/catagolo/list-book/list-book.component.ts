@@ -15,6 +15,9 @@ export class ListBookComponent implements OnInit {
   dataLibri: any;
   categoriaId: any;
   lenghtLIbri: any;
+  libriId: any;
+  dataLenght: any;
+  data: Array<any> =[]
 
 
   constructor(private libriService : LibriService,
@@ -30,6 +33,7 @@ export class ListBookComponent implements OnInit {
             this.dataLibri = x
             this.lenghtLIbri = this.dataLibri.length;
             
+            this.dataLenght = this.dataLibri.length
           })}
           else{
             this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
@@ -43,6 +47,14 @@ export class ListBookComponent implements OnInit {
         
       
 
+
+
+
+    }
+
+  dataEntrante(c:any){
+   this.data = c
+    localStorage.setItem('ahora', JSON.stringify(this.data))
 
   }
 

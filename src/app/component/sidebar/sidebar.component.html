@@ -1,20 +1,43 @@
 
 <div class="container">
-  <mat-accordion >
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title >
-          Categoria
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <mat-panel-description  [routerLink]="'/catalogo/'+0">
-        Tutti
-      </mat-panel-description>
-      <mat-panel-description  [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
-        <p >{{c.nomeCategoria}}</p>
-      </mat-panel-description>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <div class="container-cat">
+    <div class="title">
+      <h3>CATEGORIA</h3>
+      <svg (click)="clickCategoria()" *ngIf="categoriaClick === true" height="24" width="24"><path d="m7.45 14.95-.975-.975L12 8.425l5.525 5.55-.975.975L12 10.425Z"/></svg>
+      <svg (click)="clickCategoria()"  *ngIf="categoriaClick === false"height="24" width="24"><path d="M12 14.95 6.475 9.425l.975-1 4.55 4.55 4.55-4.55.975 1Z"/></svg>
+    </div>
+    <div class="content-cat"  *ngIf="categoriaClick === false" >
+      <input type="checkbox" checked  name="categoria"  [routerLink]="'/catalogo/'+0" > Tutti
+      <div  [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
+        <input type="checkbox" name="categoria" > {{c.nomeCategoria}}
+      </div>
+    </div>
+  </div>
+  <div class="container-cat">
+    <div class="title">
+      <h3>STATO</h3>
+      <svg (click)="clickStato()" *ngIf="statoClick === true" height="24" width="24"><path d="m7.45 14.95-.975-.975L12 8.425l5.525 5.55-.975.975L12 10.425Z"/></svg>
+      <svg (click)="clickStato()"  *ngIf="statoClick === false"height="24" width="24"><path d="M12 14.95 6.475 9.425l.975-1 4.55 4.55 4.55-4.55.975 1Z"/></svg>
+
+    </div>
+    <div class="content-cat"  *ngIf="statoClick === false" >
+      <div  >
+        <input type="checkbox" name="categoria" > Nuovo <br>
+        <input type="checkbox" name="categoria" > Usato
+      </div>
+    </div>
+  </div>
+
+  <div class="container-cat">
+    <div class="title">
+      <h3>OFFERTE</h3>
+      <svg (click)="clickOfferte()" *ngIf="offerteClick === true" height="24" width="24"><path d="m7.45 14.95-.975-.975L12 8.425l5.525 5.55-.975.975L12 10.425Z"/></svg>
+      <svg (click)="clickOfferte()"  *ngIf="offerteClick === false" height="24" width="24"><path d="M12 14.95 6.475 9.425l.975-1 4.55 4.55 4.55-4.55.975 1Z"/></svg>
+    </div>
+    <div class="content-cat"  *ngIf="offerteClick === false" >
+      <input type="checkbox" name="categoria" > Sconto
+    </div>
+  </div>
 
 </div>
 
