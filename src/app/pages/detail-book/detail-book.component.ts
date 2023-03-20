@@ -10,7 +10,7 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 export class DetailBookComponent implements OnInit {
 
   libriId : any;
-  libriDati :  any 
+  libriDati :  any
   datiLocalStorage : any = []
 
 
@@ -23,13 +23,12 @@ export class DetailBookComponent implements OnInit {
 
       this.libriService.BookId(this.libriId).subscribe( (x:any) => {
         this.libriDati = Array(x)
-        console.log(this.libriDati);
-        
+
 
       })
     })
 
-    
+
     }
 
 }

@@ -17,7 +17,7 @@ export class ListBookComponent implements OnInit {
   lenghtLIbri: any;
   libriId: any;
   dataLenght: any;
-  data: Array<any> =[]
+  data : any =[]
 
 
   constructor(private libriService : LibriService,
@@ -32,7 +32,7 @@ export class ListBookComponent implements OnInit {
           this.libriService.AllBook().subscribe(x => {
             this.dataLibri = x
             this.lenghtLIbri = this.dataLibri.length;
-            
+
             this.dataLenght = this.dataLibri.length
           })}
           else{
@@ -41,12 +41,16 @@ export class ListBookComponent implements OnInit {
               this.lenghtLIbri = this.dataLibri.length;
             })
           }
-        })        
-    }
-    
-    dataEntrante(c:any){
-      this.data = c
-      localStorage.setItem('ahora', JSON.stringify(this.data))
+        })
+
+      }
+
+      dataEntrante(c : any){
+        this.data.unshift(c)
+
+        console.log(this.data);
+
+        localStorage.setItem('ahora', JSON.stringify(this.data))
   }
 
   clickEvent(){

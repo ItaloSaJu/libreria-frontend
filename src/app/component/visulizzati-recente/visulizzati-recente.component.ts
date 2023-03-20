@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisulizzatiRecenteComponent implements OnInit {
 
-  datiLocalStorage : any 
+  datiLocalStorage : any
   datiArray: Array<any> = []
 
   constructor() { }
@@ -21,8 +21,8 @@ export class VisulizzatiRecenteComponent implements OnInit {
 
     const dato = localStorage.getItem('ahora');
     if(dato){
-      this.datiLocalStorage = Array(JSON.parse(dato))
-      
+      this.datiLocalStorage = JSON.parse(dato)
+
     }
     this.datiArray.push(this.datiLocalStorage)
     console.log(this.datiLocalStorage);
