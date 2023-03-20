@@ -16,6 +16,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/visulizzati-recente.component';
 
 
 
@@ -27,7 +28,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CatagoloComponent,
     HomepageComponent,
     ListBookComponent,
-    DetailBookComponent
+    DetailBookComponent,
+    VisulizzatiRecenteComponent
   ],
   imports: [
     BrowserModule,
