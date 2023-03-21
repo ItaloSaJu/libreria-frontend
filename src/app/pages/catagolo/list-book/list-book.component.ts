@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
 
@@ -17,7 +17,7 @@ export class ListBookComponent implements OnInit {
   lenghtLIbri: any;
   libriId: any;
   dataLenght: any;
-  data: any =[]
+  data: any = []
 
 
   constructor(private libriService : LibriService,
@@ -25,34 +25,35 @@ export class ListBookComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.categoriaId = params['categoriaId']
+      this.route.params.subscribe((params) => {
+        this.categoriaId = params['categoriaId']
 
-        if(this.categoriaId == 0){
-          this.libriService.AllBook().subscribe(x => {
-            this.dataLibri = x
-            this.lenghtLIbri = this.dataLibri.length;
-            
-            this.dataLenght = this.dataLibri.length
-          })}
-          else{
-            this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
+          if(this.categoriaId == 0){
+            this.libriService.AllBook().subscribe(x => {
               this.dataLibri = x
               this.lenghtLIbri = this.dataLibri.length;
-            })
+
+              this.dataLenght = this.dataLibri.length
+            })}
+            else{
+              this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
+                this.dataLibri = x
+                this.lenghtLIbri = this.dataLibri.length;
+              })
           }
-        })        
-    }
-    
+      })        
+  }
+      
   dataEntrante(c:any){
-      this.data = c
-      localStorage.setItem('ahora', JSON.stringify(this.data))
+    this.data = c
+    
+    localStorage.setItem('ahora', JSON.stringify(this.data))
   }
 
   clickEvent(){
     this.status = !this.status;
     this.button = !this.button;
-}
+  }
 
 
 

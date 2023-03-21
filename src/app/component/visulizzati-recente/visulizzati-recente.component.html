@@ -5,7 +5,7 @@
     </div>
 
     <div class="container-grid"  >
-        <div class="card-grid" *ngFor="let c of datiArray">
+        <div class="card-grid" *ngFor="let c of datiLocalStorage">
           <div class="image-grid"> 
             <img [routerLink]="'/details/'+c.idLibri" src="{{c.imageLibro}}" alt="">
             <div class="bottoni-grid">
@@ -17,16 +17,16 @@
             <div class="title-grid">
                 <h2 [routerLink]="'/details/'+c.idLibri">{{c.nomeLibro}}</h2>
             </div>
-    
+
             <div class="info-grid">
               <p>di - <span>{{c.autoreLibro}}</span> </p>
               <p>Categoria : <span>{{c.categoria.nomeCategoria}}</span></p>
             </div>
             <div class="prezzo-grid">
               <span>{{c.prezzoLibro}},00 €</span>
-    
+
             </div>
-          
+
           </div>
         </div>
     </div>

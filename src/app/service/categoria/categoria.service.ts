@@ -11,4 +11,6 @@ export class CategoriaService {
   AllCategory(){
     return this.http.get('http://localhost:8081/api/categoria');
   }
+
+  
 }

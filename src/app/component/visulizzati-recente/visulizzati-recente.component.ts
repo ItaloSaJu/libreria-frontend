@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibriService } from 'src/app/service/libri/libri.service';
 
 @Component({
   selector: 'app-visulizzati-recente',
@@ -7,25 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisulizzatiRecenteComponent implements OnInit {
 
-  datiLocalStorage : any 
-  datiArray: Array<any> = []
+  datiLocalStorage : any
+  datiArray:any = []
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.libriService.disparador.subscribe(data => {
-    //   this.datiLocalStorage.push(data)
-    //   console.log(this.datiLocalStorage);
-
-    // })
+    
 
     const dato = localStorage.getItem('ahora');
     if(dato){
-      this.datiLocalStorage = JSON.parse(dato)
+      this.datiLocalStorage = Array(JSON.parse(dato))
       
     }
     this.datiArray.push(this.datiLocalStorage)
     console.log(this.datiArray);
   }
+
 
 }
