@@ -14,15 +14,14 @@ export class VisulizzatiRecenteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
 
     const dato = localStorage.getItem('ahora');
     if(dato){
       this.datiLocalStorage = Array(JSON.parse(dato))
-      
+
     }
     this.datiArray.push(this.datiLocalStorage)
-    console.log(this.datiArray);
   }
 
 

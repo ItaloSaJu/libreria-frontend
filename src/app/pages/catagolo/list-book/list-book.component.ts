@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
+import {Datos} from '../../../service/model/datos';
 
 @Component({
   selector: 'app-list-book',
@@ -26,6 +27,7 @@ export class ListBookComponent implements OnInit {
 
   ngOnInit(): void {
       this.route.params.subscribe((params) => {
+        this.libriId = params['libriId']
         this.categoriaId = params['categoriaId']
 
           if(this.categoriaId == 0){
@@ -41,13 +43,16 @@ export class ListBookComponent implements OnInit {
                 this.lenghtLIbri = this.dataLibri.length;
               })
           }
-      })        
+
+      })
   }
-      
-  dataEntrante(c:any){
-    this.data = c
-    
-    localStorage.setItem('ahora', JSON.stringify(this.data))
+
+  dataEntrante(c : Datos){
+    // this.data.unshift(c)
+    // console.log(this.data);
+
+
+    // localStorage.setItem('ahora', JSON.stringify(c))
   }
 
   clickEvent(){

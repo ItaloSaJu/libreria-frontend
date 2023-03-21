@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
+import { Datos } from 'src/app/service/model/datos';
 
 @Component({
   selector: 'app-detail-book',
@@ -10,9 +11,8 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 export class DetailBookComponent implements OnInit {
 
   libriId : any;
-  libriDati :  any
-  dati : Array<any> = []
-  @Output() close: EventEmitter<any> = new EventEmitter();
+  libriDati :any
+  dati : any [] = []
 
 
   constructor(private libriService : LibriService,
@@ -22,16 +22,13 @@ export class DetailBookComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId']
 
-      this.libriService.BookId(this.libriId).subscribe( (x:any) => {
+      this.libriService.BookId(this.libriId).subscribe( x => {
         this.libriDati = Array(x)
-        this.close.emit(this.dati)
         // localStorage.setItem('datiLibri', JSON.stringify(this.libriDati))
-
-        
       })
     })
 
   }
-  
+
 
 }
