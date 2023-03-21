@@ -17,7 +17,7 @@ export class ListBookComponent implements OnInit {
   lenghtLIbri: any;
   libriId: any;
   dataLenght: any;
-  data: Array<any> =[]
+  data: any =[]
 
 
   constructor(private libriService : LibriService,
@@ -44,7 +44,7 @@ export class ListBookComponent implements OnInit {
         })        
     }
     
-    dataEntrante(c:any){
+  dataEntrante(c:any){
       this.data = c
       localStorage.setItem('ahora', JSON.stringify(this.data))
   }
