@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
+import { Datos } from 'src/app/service/model/datos';
 
 @Component({
   selector: 'app-detail-book',
@@ -10,8 +11,13 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 export class DetailBookComponent implements OnInit {
 
   libriId : any;
+<<<<<<< HEAD
   libriDati :  any
   categoria :  any
+=======
+  libriDati :any
+  dati : any [] = []
+>>>>>>> 11ad3c55b583540eba0aa96904c9b1f58ce80500
 
 
   constructor(private libriService : LibriService,
@@ -20,11 +26,18 @@ export class DetailBookComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId']
+<<<<<<< HEAD
       
       this.libriService.BookId(this.libriId).subscribe( (x:any) => {
         this.libriDati = Array(x)
         // localStorage.setItem('datiLibri', JSON.stringify(this.libriDati))
         
+=======
+
+      this.libriService.BookId(this.libriId).subscribe( x => {
+        this.libriDati = Array(x)
+        // localStorage.setItem('datiLibri', JSON.stringify(this.libriDati))
+>>>>>>> 11ad3c55b583540eba0aa96904c9b1f58ce80500
       })
       // this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
       //   this.libriDati = x
@@ -41,4 +54,10 @@ export class DetailBookComponent implements OnInit {
       
 
   }
+<<<<<<< HEAD
 }
+=======
+
+
+}
+>>>>>>> 11ad3c55b583540eba0aa96904c9b1f58ce80500
