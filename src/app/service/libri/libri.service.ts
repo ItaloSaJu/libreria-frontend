@@ -9,11 +9,11 @@ export class LibriService {
   constructor(private http : HttpClient) { }
 
   AllBook(){
-    return this.http.get('http://localhost:8081/api/libri')
+    return this.http.get<[]>('http://localhost:8081/api/libri')
   }
 
   LibriDellaStessaCategoria(categoriaId : any){
-    return this.http.get(`http://localhost:8081/api/category/${categoriaId}`)
+    return this.http.get<[]>(`http://localhost:8081/api/category/${categoriaId}`)
   }
 
   BookId(libriId : any){

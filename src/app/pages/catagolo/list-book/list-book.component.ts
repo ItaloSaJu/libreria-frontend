@@ -39,15 +39,17 @@ export class ListBookComponent implements OnInit {
               this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
                 this.dataLibri = x
                 this.lenghtLIbri = this.dataLibri.length;
+                console.log(this.dataLibri);
+                
               })
-          }
-      })        
+            }
+          })        
+          localStorage.setItem('ahora', JSON.stringify(this.dataLibri))
   }
       
   dataEntrante(c:any){
     this.data = c
     
-    localStorage.setItem('ahora', JSON.stringify(this.data))
   }
 
   clickEvent(){

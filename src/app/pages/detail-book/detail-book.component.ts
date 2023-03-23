@@ -11,8 +11,7 @@ export class DetailBookComponent implements OnInit {
 
   libriId : any;
   libriDati :  any
-  dati : Array<any> = []
-  @Output() close: EventEmitter<any> = new EventEmitter();
+  categoria :  any
 
 
   constructor(private libriService : LibriService,
@@ -21,17 +20,25 @@ export class DetailBookComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId']
-
+      
       this.libriService.BookId(this.libriId).subscribe( (x:any) => {
         this.libriDati = Array(x)
-        this.close.emit(this.dati)
         // localStorage.setItem('datiLibri', JSON.stringify(this.libriDati))
-
         
       })
-    })
+      // this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
+      //   this.libriDati = x
+      //   console.log(this.libriDati);
+      //   console.log(this.categoriaId);
+         
+       })
+      
+      this.libriService.AllBook().subscribe(x=> {
+        this.categoria = x.filter(p => p === 1 )
+        
+        console.log(this.categoria);
+      })
+      
 
   }
-  
-
 }
