@@ -17,6 +17,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/visulizzati-recente.component';
+import { BookCategoryComponent } from './component/book-category/book-category.component';
 
 
 
@@ -29,7 +30,8 @@ import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/vis
     HomepageComponent,
     ListBookComponent,
     DetailBookComponent,
-    VisulizzatiRecenteComponent
+    VisulizzatiRecenteComponent,
+    BookCategoryComponent
   ],
   imports: [
     BrowserModule,
