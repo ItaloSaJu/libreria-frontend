@@ -19,6 +19,8 @@ export class ListBookComponent implements OnInit {
   libriId: any;
   dataLenght: any;
   data: any = []
+   viewedProducts: string[] = [];
+
 
 
   constructor(private libriService : LibriService,
@@ -45,6 +47,8 @@ export class ListBookComponent implements OnInit {
           }
 
       })
+      console.log(this.viewedProducts);
+
   }
 
   dataEntrante(c : Datos){
@@ -54,6 +58,8 @@ export class ListBookComponent implements OnInit {
 
     // localStorage.setItem('ahora', JSON.stringify(c))
   }
+
+
 
   clickEvent(){
     this.status = !this.status;
