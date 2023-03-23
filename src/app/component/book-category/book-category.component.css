@@ -27,11 +27,11 @@
     align-items: center;
     justify-items: center;
   }
-  
+
   .card-grid{
     width: 90%;
     height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.058) 0px 3px 8px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -48,15 +48,15 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-  
+
   }
-  
+
   .image-grid img{
     width: 70%;
     height: 100%;
     cursor: pointer;
   }
-  
+
   .content-grid{
     width: 100%;
     height: 45%;
@@ -66,42 +66,42 @@
     flex-direction: column;
     gap: 2px;
   }
-  
+
   .content-grid .title-grid{
     text-align: center;
     width: 100%;
     height: auto;
   }
-  
+
   .title-grid h2{
     font-size: 12px;
     line-height: 17px;
     cursor: pointer;
-  
+
   }
   .title-grid h2:hover{
     text-decoration:underline;
   }
-  
-  
+
+
   .content-grid .info-grid {
     text-align: center;
     width: 100%;
     height: auto;
-  
+
   }
-  
+
   .info-grid p{
     font-size: 11px;
     line-height: 10px;
-  
+
   }
-  
+
   .prezzo-grid span{
     font-size: 15px;
     font-weight: 500;
   }
-  
+
   .bottoni-grid{
     width: 100%;
     height: 20%;
@@ -115,9 +115,8 @@
     transition: 2s;
     gap: 20px;
   }
-  
+
   .card-grid:hover .bottoni-grid{
     display: flex;
   }
-  
-  
+
