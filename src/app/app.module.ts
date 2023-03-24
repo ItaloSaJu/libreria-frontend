@@ -18,6 +18,7 @@ import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/visulizzati-recente.component';
 import { BookCategoryComponent } from './component/book-category/book-category.component';
+import { CommentiBookComponent } from './component/commenti-book/commenti-book.component';
 
 
 
@@ -31,7 +32,8 @@ import { BookCategoryComponent } from './component/book-category/book-category.c
     ListBookComponent,
     DetailBookComponent,
     VisulizzatiRecenteComponent,
-    BookCategoryComponent
+    BookCategoryComponent,
+    CommentiBookComponent
   ],
   imports: [
     BrowserModule,
