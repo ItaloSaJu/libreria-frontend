@@ -19,7 +19,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/visulizzati-recente.component';
 import { BookCategoryComponent } from './component/book-category/book-category.component';
 import { CommentiBookComponent } from './component/commenti-book/commenti-book.component';
-
+import { FormBookComponent } from './component/commenti-book/form-book/form-book.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { CommentiBookComponent } from './component/commenti-book/commenti-book.c
     DetailBookComponent,
     VisulizzatiRecenteComponent,
     BookCategoryComponent,
-    CommentiBookComponent
+    CommentiBookComponent,
+    FormBookComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,9 @@ import { CommentiBookComponent } from './component/commenti-book/commenti-book.c
     MatExpansionModule,
     MatTreeModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule,
+    FormsModule
 
   ],
   providers: [],

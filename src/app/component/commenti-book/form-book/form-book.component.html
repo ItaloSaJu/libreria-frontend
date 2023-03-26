@@ -1,0 +1,26 @@
+
+<div class="containera">
+  {{dataComment | json}}
+    <div class="container-commenti">
+      <div class="dati">
+        <h4>Italo Salas -</h4>
+        <p>10-gennaio-2023</p>
+      </div>
+      <div class="contenuto">
+          <form action="">
+            <div class="container-form">
+
+              <label for="">id</label>
+              <input type="text" readonly   name="idLibri" [(ngModel)]="dataComment.libro.idLibri">
+              <label for="">Titolo</label>
+              <input type="text" name="titoloCommento" [(ngModel)]="dataComment.titoloCommento">
+            </div>
+            <div class="container-form">
+              <label for="">Commento</label>
+              <textarea name="descriptionCommento" id="" cols="10" rows="5" [(ngModel)]="dataComment.descriptionCommento"></textarea>
+            </div>
+            <button (click)="inviare()">Inviare</button>
+          </form>
+      </div>
+    </div>
+  </div>

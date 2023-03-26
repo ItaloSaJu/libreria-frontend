@@ -1,8 +1,50 @@
 <div class="container">
-    <div class="title">
-      <h3>Reccensione</h3>
+  <div class="title">
+    <h3>Recensione</h3>
+    <button (click)="formCommenti()">Scrivi una recensione</button>
+  </div>
+
+  <app-form-book class="form" *ngIf="formComment "  [data]="this.libriId"></app-form-book>
+  <div class="commenti" *ngFor="let x of allComment">
+    <div class="container-commenti">
+      <div class="dati">
+        <h4>Italo Salas -</h4>
+        <p>{{x.dateCommento}}</p>
+      </div>
+      <div class="contenuto">
+        <div class="contenuto-master">
+          <h3>{{x.titoloCommento}}</h3>
+          <p>
+            {{x.descriptionCommento}}
+          </p>
+        </div>
+        <div class="opzioni">
+          <p>Me gusta</p>
+          <p>Rispondi</p>
+          <p (click)="nascondiCommenti()">Nascondi</p>
+        </div>
+
+        <div class="contenuto-second" *ngIf="nascondi">
+          <div class="dati-second">
+            <h4>Ingrid Salas -</h4>
+            <p>10-gennaio-2023</p>
+          </div>
+          <div class="comment-second">
+            <div class="contenuto-master-second">
+              <h3>Libro molto utile</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                sequi asperiores? Ad numquam quasi maiores cum nostrum rerum
+                animi pariatur velit debiti
+              </p>
+            </div>
+            <div class="opzioni">
+              <p>Me gusta</p>
+              <p>Rispondi</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="commenti">
-      .
-    </div>
+  </div>
 </div>

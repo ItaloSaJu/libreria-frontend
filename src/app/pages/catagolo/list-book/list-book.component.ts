@@ -51,7 +51,6 @@ export class ListBookComponent implements OnInit {
 
   dataEntrante(c:any) {
     this.data = c
-    console.log(this.data);
     localStorage.setItem('ahora', JSON.stringify(this.data));
   }
 

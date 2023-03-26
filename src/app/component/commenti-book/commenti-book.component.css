@@ -1,17 +1,136 @@
 .container{
     width: 100%;
-    height: 40vh;
+    min-height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+.form{
+  width: 80%;
 }
 
 .title{
+  width: 80%;
     text-align: start;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
+.title h3{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+.title button{
+  background-color: transparent;
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.title button:hover{
+  color: rgba(0, 0, 0, 0.474);
+  border: 1px solid rgba(0, 0, 0, 0.474);
+}
+.title button{
+  width: 200px;
+  height: 40px;
+
+}
+
 .commenti{
     width: 80%;
     height: 20%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
+
+.container-commenti{
+  width: 100%;
+  height: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.474);
+}
+.dati{
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.474);
+  padding: 10px 30px;
+}
+.container h4, h3, p{
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+.dati{
+  display: flex;
+  gap: 5px;
+}
+.dati h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+.contenuto h3{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contenuto{
+  padding: 10px 30px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.opzioni{
+  display: flex;
+  gap: 10px;
+}
+.opzioni p{
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+}
+.opzioni p:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+/*****/
+.contenuto-second{
+  padding: 10px 0px 10px 35px;
+  margin: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.474);
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.dati-second{
+  width: 100%;
+}
+
+
+.dati-second{
+  display: flex;
+  gap: 5px;
+}
+.dati-second h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.comment-second{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.contenuto-master-second h3{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+

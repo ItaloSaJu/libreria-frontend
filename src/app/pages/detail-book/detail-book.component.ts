@@ -12,8 +12,8 @@ export class DetailBookComponent implements OnInit {
   libriId: any;
   libriDati: any;
   categoria: any;
-  a : Array<any> =[]
-  view : any[]= []
+  a: Array<any> = [];
+  view: any[] = [];
 
   constructor(
     private libriService: LibriService,
@@ -27,17 +27,14 @@ export class DetailBookComponent implements OnInit {
       this.libriService.BookId(this.libriId).subscribe((x: any) => {
         this.libriDati = Array(x);
       });
-      // this.libriService.LibriDellaStessaCategoria(this.categoriaId).subscribe(x => {
-      //   this.libriDati = x
-      //   console.log(this.libriDati);
-      //   console.log(this.categoriaId);
     });
-    let data = localStorage.getItem('ahora')
-    if(data){
-       this.a = JSON.parse(data)
 
-      }
-      this.view.push(this.a)
-    console.log(this.view );
+    let data = localStorage.getItem('ahora');
+    if (data) {
+      this.a = JSON.parse(data);
+    }
+    this.view.push(this.a);
   }
+
+
 }

@@ -1,0 +1,77 @@
+.container{
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+
+
+.container-commenti{
+width: 100%;
+height: 50%;
+border: 1px solid rgba(0, 0, 0, 0.474);
+}
+.dati{
+width: 100%;
+border-bottom: 1px solid rgba(0, 0, 0, 0.474);
+padding: 10px 30px;
+}
+.container h4, p{
+margin: 0;
+display: flex;
+align-items: center;
+}
+
+.dati{
+display: flex;
+gap: 5px;
+}
+.dati h4{
+  margin: 0;
+font-size: 16px;
+font-weight: 500;
+}
+
+.contenuto{
+padding: 10px 30px;
+margin: 0;
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+label{
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+input{
+  margin-top: 8px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.474);
+  padding-left: 20px;
+}
+textarea{
+  margin-top: 8px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.474);
+  padding-left: 20px;
+  padding-top: 10px;
+}
