@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommentiService } from 'src/app/service/commenti/commenti.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { CommentiService } from 'src/app/service/commenti/commenti.service';
 })
 export class FormBookComponent implements OnInit {
   @Input() data: any;
+  @Output() dataRecensione : any = new EventEmitter()
   dataComment: any;
   constructor(private commentiService: CommentiService) {}
 
@@ -22,8 +23,9 @@ export class FormBookComponent implements OnInit {
   }
 
   inviare() {
-    this.commentiService.addBook(this.dataComment).subscribe((x) => {
-      console.log(x);
-    });
+    // this.ngOnInit()
+    this.dataRecensione.emit(this.dataComment)
   }
+
+
 }

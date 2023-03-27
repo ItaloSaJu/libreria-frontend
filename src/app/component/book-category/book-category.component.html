@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" #target>
   <div class="title">
-    <h3>Prodotti della Stesa Categoria</h3>
+    <h3>Prodotti della Stessa Categoria</h3>
   </div>
 
   <div class="container-grid">
@@ -8,7 +8,7 @@
       <div class="image-grid">
         <img
           (click)="detailNavigation()"
-         
+          [routerLink]="'/details/'+ c.idLibri"
           src="{{ c.imageLibro }}"
           alt=""
         />

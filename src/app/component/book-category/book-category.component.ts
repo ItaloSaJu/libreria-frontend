@@ -16,7 +16,7 @@ export class BookCategoryComponent implements OnInit {
 
   constructor(private libriService : LibriService,
     private route : ActivatedRoute,
-    private router: Router ) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -36,8 +36,8 @@ export class BookCategoryComponent implements OnInit {
   }
 
   detailNavigation(){
-    location.reload()
-    
+    window.scrollTo(0, 0);
+
   }
 
 }

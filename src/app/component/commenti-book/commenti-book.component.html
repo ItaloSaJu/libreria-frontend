@@ -1,11 +1,13 @@
-<div class="container">
+<div  class="container">
   <div class="title">
     <h3>Recensione</h3>
     <button (click)="formCommenti()">Scrivi una recensione</button>
   </div>
 
-  <app-form-book class="form" *ngIf="formComment"  [data]="this.libriId"></app-form-book>
-  <div class="commenti" *ngFor="let x of allComment">
+  <app-form-book class="form" *ngIf="formComment"
+              [data]="this.libriId"
+              (dataRecensione)="dataRecensione($event)"></app-form-book>
+  <div class="commenti" *ngFor="let x of allComment.slice(0, mostraTuttiCommentari ? undefined : 2)">
     <div class="container-commenti">
       <div class="dati">
         <h4>Italo Salas -</h4>
@@ -47,4 +49,6 @@
       </div>
     </div>
   </div>
+  <button  *ngIf="!mostraTuttiCommentari" (click)="cargarMasComentarios()">Tutte le recensioni</button>
+  <button  *ngIf="mostraTuttiCommentari" (click)="cargarMasComentarios()">Nascondi</button>
 </div>
