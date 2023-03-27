@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommentiService } from 'src/app/service/commenti/commenti.service';
+import { LibriService } from 'src/app/service/libri/libri.service';
 
 @Component({
   selector: 'app-commenti-book',
@@ -14,6 +15,7 @@ export class CommentiBookComponent implements OnInit {
   libriId: any;
 
   constructor(
+    private libriService : LibriService,
     private commentiService: CommentiService,
     private route: ActivatedRoute
   ) {}
@@ -30,6 +32,7 @@ export class CommentiBookComponent implements OnInit {
       });
       console.log(this.allComment);
     });
+
   }
 
   nascondiCommenti() {

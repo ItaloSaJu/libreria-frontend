@@ -4,7 +4,7 @@
     <button (click)="formCommenti()">Scrivi una recensione</button>
   </div>
 
-  <app-form-book class="form" *ngIf="formComment "  [data]="this.libriId"></app-form-book>
+  <app-form-book class="form" *ngIf="formComment"  [data]="this.libriId"></app-form-book>
   <div class="commenti" *ngFor="let x of allComment">
     <div class="container-commenti">
       <div class="dati">

@@ -7,7 +7,8 @@
     <div class="card-grid" *ngFor="let c of categoria">
       <div class="image-grid">
         <img
-          [routerLink]="'/details/' + c.idLibri"
+          (click)="detailNavigation()"
+         
           src="{{ c.imageLibro }}"
           alt=""
         />
@@ -26,7 +27,7 @@
       </div>
       <div class="content-grid">
         <div class="title-grid">
-          <h2 [routerLink]="'/details/' + c.idLibri">{{ c.nomeLibro }}</h2>
+          <h2 [routerLink]="'/details/'+ c.idLibri" (click)="detailNavigation()">{{ c.nomeLibro }}</h2>
         </div>
 
         <div class="info-grid">
