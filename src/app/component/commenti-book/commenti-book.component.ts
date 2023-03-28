@@ -14,6 +14,8 @@ export class CommentiBookComponent implements OnInit {
   allComment: any = [];
   libriId: any;
   mostraTuttiCommentari:boolean = false
+  mostraDue:boolean = false
+  
 
   constructor(
     private commentiService: CommentiService,
@@ -23,16 +25,25 @@ export class CommentiBookComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId'];
-
-      this.commentiService.AllCommenti().subscribe((x) => {
-        this.allComment = x.filter((p:any) => {
-          return p.libro.idLibri == this.libriId
-
-        });
-        console.log(this.allComment);
-      });
+      this.getAllCommenti()
     });
   }
+  
+  getAllCommenti(){
+    this.commentiService.AllCommenti().subscribe((x) => {
+      if(this.mostraDue){
+        this.allComment = x.filter((p:any) => {
+          return p.libro.idLibri == this.libriId
+        }).slice(0,2);
+      }else if(this.mostraTuttiCommentari){
+        this.allComment = x.filter((p:any) => {
+          return p.libro.idLibri == this.libriId
+        });
+      }
+    });
+    
+  }
+
 
   nascondiCommenti() {
     this.nascondi = !this.nascondi;
@@ -49,8 +60,17 @@ export class CommentiBookComponent implements OnInit {
 
   }
 
-  cargarMasComentarios() {
-    this.mostraTuttiCommentari = true;
+  caricareTuttiComent() {
+    this.mostraTuttiCommentari = true
+    this.mostraDue = false
+    this.getAllCommenti()
+    
+  }
+  
+  cargarDueCoemnt(){
+    this.mostraDue = true
+    this.mostraTuttiCommentari = false
+    this.getAllCommenti()
   }
 
 }
