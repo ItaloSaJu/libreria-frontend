@@ -15,7 +15,7 @@ export class CommentiBookComponent implements OnInit {
   libriId: any;
   mostraTuttiCommentari:boolean = false
   mostraDue:boolean = false
-  
+
 
   constructor(
     private commentiService: CommentiService,
@@ -25,10 +25,15 @@ export class CommentiBookComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.libriId = params['libriId'];
-      this.getAllCommenti()
-    });
-  }
-  
+      this.commentiService.AllCommenti().subscribe((x) => {
+          this.allComment = x.filter((p:any) => {
+            return p.libro.idLibri == this.libriId
+          }).slice(0,2);
+
+          this.getAllCommenti()
+        });
+      })
+    }
   getAllCommenti(){
     this.commentiService.AllCommenti().subscribe((x) => {
       if(this.mostraDue){
@@ -41,7 +46,7 @@ export class CommentiBookComponent implements OnInit {
         });
       }
     });
-    
+
   }
 
 
@@ -64,9 +69,9 @@ export class CommentiBookComponent implements OnInit {
     this.mostraTuttiCommentari = true
     this.mostraDue = false
     this.getAllCommenti()
-    
+
   }
-  
+
   cargarDueCoemnt(){
     this.mostraDue = true
     this.mostraTuttiCommentari = false
