@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LibriService } from 'src/app/service/libri/libri.service';
+import { VisualizzatiRecenteService } from 'src/app/service/visualizzati-recente/visualizzati-recente.service';
 
 @Component({
   selector: 'app-visulizzati-recente',
@@ -8,21 +9,15 @@ import { LibriService } from 'src/app/service/libri/libri.service';
 })
 export class VisulizzatiRecenteComponent implements OnInit {
 
-  datiLocalStorage : any
-  datiArray:any = []
+  prodotti : any
 
-  constructor() { }
+  constructor(private visualizzatiRecente: VisualizzatiRecenteService) { }
 
   ngOnInit(): void {
-
-
-    const dato = localStorage.getItem('ahora');
-    if(dato){
-      this.datiLocalStorage = Array(JSON.parse(dato))
-
-    }
-    this.datiArray.push(this.datiLocalStorage)
+    this.prodotti = this.visualizzatiRecente.getProdotti().slice(0,4)
   }
+
+
 
 
 }

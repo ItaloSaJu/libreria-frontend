@@ -18,7 +18,6 @@ export class LibriService {
 
   BookId(libriId : any){
     return this.http.get<[]>(`http://localhost:8081/api/libri/${libriId}`)
-
   }
 
 

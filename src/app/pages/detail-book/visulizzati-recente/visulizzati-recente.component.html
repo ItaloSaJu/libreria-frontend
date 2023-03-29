@@ -5,7 +5,7 @@
     </div>
 
     <div class="container-grid"  >
-        <div class="card-grid" *ngFor="let c of datiLocalStorage">
+        <div class="card-grid" *ngFor="let c of prodotti">
           <div class="image-grid"> 
             <img [routerLink]="'/details/'+c.idLibri" src="{{c.imageLibro}}" alt="">
             <div class="bottoni-grid">

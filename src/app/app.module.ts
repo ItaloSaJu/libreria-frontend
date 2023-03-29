@@ -16,7 +16,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DetailBookComponent } from './pages/detail-book/detail-book.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { VisulizzatiRecenteComponent } from './component/visulizzati-recente/visulizzati-recente.component';
+import { VisulizzatiRecenteComponent } from './pages/detail-book/visulizzati-recente/visulizzati-recente.component';
 import { BookCategoryComponent } from './component/book-category/book-category.component';
 import { CommentiBookComponent } from './component/commenti-book/commenti-book.component';
 import { FormBookComponent } from './component/commenti-book/form-book/form-book.component';

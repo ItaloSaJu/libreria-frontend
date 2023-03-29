@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LibriService } from 'src/app/service/libri/libri.service';
+import { VisualizzatiRecenteService } from 'src/app/service/visualizzati-recente/visualizzati-recente.service';
 import { Datos } from '../../../service/model/datos';
 
 @Component({
@@ -22,7 +23,8 @@ export class ListBookComponent implements OnInit {
   constructor(
     private libriService: LibriService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private visualizzatiRecente: VisualizzatiRecenteService
   ) {}
 
   ngOnInit(): void {
@@ -50,8 +52,8 @@ export class ListBookComponent implements OnInit {
   }
 
   dataEntrante(c:any) {
-    this.data = c
-    localStorage.setItem('ahora', JSON.stringify(this.data));
+    this.visualizzatiRecente.addProdotti(c)
+    
   }
 
   clickEvent() {
