@@ -22,6 +22,7 @@ import { CommentiBookComponent } from './component/commenti-book/commenti-book.c
 import { FormBookComponent } from './component/commenti-book/form-book/form-book.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     VisulizzatiRecenteComponent,
     BookCategoryComponent,
     CommentiBookComponent,
-    FormBookComponent
+    FormBookComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

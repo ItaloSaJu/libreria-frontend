@@ -23,6 +23,12 @@
             <div class="info">
                 <p>di - <span>{{c.autoreLibro}}</span> </p>
                 <p>Categoria : <span>{{c.categoria.nomeCategoria}}</span></p>
+                <!-- <p>Stato : <span *ngIf="c.stato; then nuovo else usato"></span></p>
+                  <ng-template #usato>Usato</ng-template>
+                  <ng-template #nuovo>Nuovo</ng-template> -->
+                  <p>nuovo : <span>{{c.nuovo  }}</span></p>
+                  <p>usato : <span>{{c.usato}}</span></p>
+
               </div>
               <div class="bottoni">
                 <div class="favorite">

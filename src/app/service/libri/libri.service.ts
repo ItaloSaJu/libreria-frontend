@@ -20,6 +20,16 @@ export class LibriService {
     return this.http.get<[]>(`http://localhost:8081/api/libri/${libriId}`)
   }
 
+  check(){
+    return this.http.get<[]>(`http://localhost:8081/api/check`)
+  }
 
+  getUser(){
+    return this.http.get<[]>('http://localhost:8081/api/users')
+  }
+
+  postUser(user:any){
+  return this.http.post<[]>('http://localhost:8081/api/user',user)
+  }
 
 }

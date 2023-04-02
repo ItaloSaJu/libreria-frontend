@@ -7,27 +7,31 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
   {
-    path:"*",
-    component:HomepageComponent
+    path: '*',
+    component: HomepageComponent,
   },
   {
-    path: "catalogo",
+    path: 'catalogo',
     component: CatagoloComponent,
-    children:[
+    children: [
       {
-        path:":categoriaId",
-        component:ListBookComponent
-      }
-    ]
+        path: ':categoriaId',
+        component: ListBookComponent,
+      },
+    ],
   },
-      {
-        path:"details/:libriId",
-        component:DetailBookComponent
-      }
+  {
+    path: 'details/:libriId',
+    component: DetailBookComponent,
+  },
+  {
+    path: 'check/:libriId',
+    component: ListBookComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

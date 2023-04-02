@@ -7,11 +7,14 @@
       <svg (click)="clickCategoria()"  *ngIf="categoriaClick === false"height="24" width="24"><path d="M12 14.95 6.475 9.425l.975-1 4.55 4.55 4.55-4.55.975 1Z"/></svg>
     </div>
     <div class="content-cat"  *ngIf="categoriaClick === false" >
-      <input type="checkbox" checked  name="categoria"  [routerLink]="'/catalogo/'+0" > Tutti
+      <input type="checkbox" checked  name="categoria"  [routerLink]="'/catalogo/'+0"
+      name="categoria" checked
+       > Tutti
       <div  [routerLink]="'/catalogo/'+c.categoriaId" *ngFor="let c of dataCategoria">
-        <input type="checkbox" name="categoria" > {{c.nomeCategoria}}
+        <input type="checkbox" name="myCheckbox" checked value="1"
+        (change)="actualizarCategoria()" > {{c.nomeCategoria}}
       </div>
-      
+
     </div>
   </div>
   <div class="container-cat">
@@ -22,9 +25,9 @@
 
     </div>
     <div class="content-cat"  *ngIf="statoClick === false" >
-      <div  >
-        <input type="checkbox" name="categoria" > Nuovo <br>
-        <input type="checkbox" name="categoria" > Usato
+      <div *ngFor="let x of allBook" >
+        <input type="checkbox" name="nuovo"  (change)="actualizarCategoria()" > Nuovo <br>
+        <input type="checkbox" name="usato" (change)="actualizarCategoria()" > Usato
       </div>
     </div>
   </div>
